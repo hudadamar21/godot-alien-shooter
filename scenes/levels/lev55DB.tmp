@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://pij16nwtm7lc"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_oaahl"]
+[ext_resource type="PackedScene" uid="uid://citj74ej0yjll" path="res://scenes/player/player.tscn" id="2_1phbj"]
+[ext_resource type="PackedScene" uid="uid://cuoph5yo17oc" path="res://scenes/objects/bed.tscn" id="3_vgpdw"]
+[ext_resource type="PackedScene" uid="uid://b2ldcaqc8sjvb" path="res://scenes/objects/box.tscn" id="4_6jvrw"]
+[ext_resource type="PackedScene" uid="uid://ear58s7fr553" path="res://scenes/objects/drone.tscn" id="5_pk7oo"]
+[ext_resource type="Script" path="res://scenes/objects/drone.gd" id="6_ag3ee"]
+[ext_resource type="Texture2D" uid="uid://dh11ojfjw204p" path="res://graphics/objects/gate.png" id="7_lo0yj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bq2g"]
+size = Vector2(277, 110)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_oaahl")
+
+[node name="Bed" parent="." instance=ExtResource("3_vgpdw")]
+position = Vector2(641, 249)
+scale = Vector2(0.287321, 0.287321)
+
+[node name="Box" parent="." instance=ExtResource("4_6jvrw")]
+position = Vector2(529, 187)
+scale = Vector2(0.499284, 0.506416)
+
+[node name="Gate" type="StaticBody2D" parent="."]
+
+[node name="Gate" type="Sprite2D" parent="Gate"]
+position = Vector2(299, -168)
+scale = Vector2(0.327564, 0.327564)
+texture = ExtResource("7_lo0yj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gate"]
+position = Vector2(4, 0)
+polygon = PackedVector2Array(-173, -424, -176, 22, -159, 55, -129, 80, -100, 87, 176, 87, 175, -23, 455, -22, 455, 87, 735, 87, 767, 76, 792, 51, 807, 19, 807, -424)
+
+[node name="GateDoor" type="Area2D" parent="Gate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate/GateDoor"]
+position = Vector2(320.5, 33)
+shape = SubResource("RectangleShape2D_4bq2g")
+
+[node name="Player" parent="." instance=ExtResource("2_1phbj")]
+position = Vector2(361, 237)
+rotation = 1.55509
+scale = Vector2(0.5, 0.5)
+
+[node name="Drone" parent="." instance=ExtResource("5_pk7oo")]
+position = Vector2(110, 322)
+script = ExtResource("6_ag3ee")
+
+[node name="GrenadeTimer" type="Timer" parent="."]
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Gate/GateDoor" to="." method="_on_gate_door_body_entered"]
+[connection signal="body_exited" from="Gate/GateDoor" to="." method="_on_gate_door_body_exited"]
+[connection signal="timeout" from="GrenadeTimer" to="Player" method="_on_grenade_timer_timeout"]
+[connection signal="timeout" from="LaserTimer" to="Player" method="_on_laser_timer_timeout"]

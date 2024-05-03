@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c72kgmwrilwa2"]
+
+[ext_resource type="Texture2D" uid="uid://b6arxq244rn3r" path="res://graphics/objects/light.png" id="1_plavk"]
+[ext_resource type="Texture2D" uid="uid://c2l5vv07vshfw" path="res://graphics/lights/textures/circle.png" id="2_qm0tp"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1ev40"]
+polygon = PackedVector2Array(-101, 4, -100, 9, -89, 15, -76, 16, 78, 17, 93, 11, 95, 5, 77, 5, 77, 12, -78, 12, -78, 4)
+
+[node name="SimpleLight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_plavk")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, 4)
+color = Color(1, 0.722998, 0.342318, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("2_qm0tp")
+texture_scale = 2.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(3, 0)
+occluder = SubResource("OccluderPolygon2D_1ev40")

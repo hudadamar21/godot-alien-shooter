@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ldcaqc8sjvb"]
+
+[ext_resource type="Texture2D" uid="uid://dr42g52r3js2n" path="res://graphics/objects/box/base.png" id="1_1kwtx"]
+[ext_resource type="Texture2D" uid="uid://c1v54qlxipg0p" path="res://graphics/objects/box/lid.png" id="2_dkgvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35tnm"]
+size = Vector2(216.5, 96)
+
+[node name="Box" type="StaticBody2D"]
+position = Vector2(0, -1)
+collision_layer = 4
+collision_mask = 11
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0.726768, -0.599728)
+scale = Vector2(0.538251, 0.538251)
+texture = ExtResource("1_1kwtx")
+
+[node name="Lid" type="Sprite2D" parent="."]
+position = Vector2(-1.96449, -14.5943)
+scale = Vector2(0.538251, 0.538251)
+texture = ExtResource("2_dkgvl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.476768, 0.400272)
+shape = SubResource("RectangleShape2D_35tnm")

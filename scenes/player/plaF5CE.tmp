@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://citj74ej0yjll"]
+
+[ext_resource type="Texture2D" uid="uid://dhah4ddpqsudh" path="res://graphics/player/player.png" id="1_etqbd"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_gviqq"]
+[ext_resource type="Texture2D" uid="uid://cso2tvy6ewxmx" path="res://graphics/projectiles/blue.png" id="2_6gq6h"]
+[ext_resource type="Texture2D" uid="uid://c7j1lmoyslcth" path="res://graphics/decals/white.png" id="4_jwd0h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xsamb"]
+radius = 61.0082
+
+[sub_resource type="Gradient" id="Gradient_3c8n2"]
+colors = PackedColorArray(1, 1, 1, 0.6, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x140h"]
+gradient = SubResource("Gradient_3c8n2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_213pa"]
+particle_flag_disable_z = true
+spread = 47.642
+initial_velocity_max = 167.88
+gravity = Vector3(0, 98, 0)
+scale_min = 0.0
+color = Color(0.0627451, 0.882353, 1, 1)
+color_ramp = SubResource("GradientTexture1D_x140h")
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 23
+script = ExtResource("1_gviqq")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(35, 1)
+rotation = 1.5708
+texture = ExtResource("1_etqbd")
+
+[node name="LaserImage" type="Sprite2D" parent="PlayerImage"]
+visible = false
+position = Vector2(17, -187)
+texture = ExtResource("2_6gq6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xsamb")
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanDodgeTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="DodgeTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="LaserStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(127, 20)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(125, 12)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(125, 29)
+
+[node name="ParticleLaserShot" type="GPUParticles2D" parent="."]
+position = Vector2(134, 20)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_213pa")
+texture = ExtResource("4_jwd0h")
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.74
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
+[connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
+[connection signal="timeout" from="CanDodgeTimer" to="." method="_on_can_dodge_timer_timeout"]
+[connection signal="timeout" from="DodgeTimer" to="." method="_on_dodge_timer_timeout"]

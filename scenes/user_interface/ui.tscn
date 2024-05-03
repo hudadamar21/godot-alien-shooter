@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq4tthnocidst"]
+
+[ext_resource type="Texture2D" uid="uid://b5f0x78w6iing" path="res://graphics/ui/bullet.png" id="1_j6t6t"]
+[ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_s5ddb"]
+[ext_resource type="Texture2D" uid="uid://bqcp80glug2ce" path="res://graphics/ui/grenade.png" id="2_l2tsn"]
+[ext_resource type="Texture2D" uid="uid://lx0gjevn2n11" path="res://graphics/ui/progress_bar/bg.png" id="3_x7tp0"]
+[ext_resource type="Texture2D" uid="uid://dfdy7ficyhvix" path="res://graphics/ui/progress_bar/progress.png" id="4_jr16e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixl8i"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_exf8q"]
+font_size = 24
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_s5ddb")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_bottom = 100
+
+[node name="Control" type="Control" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="LaserCounter" type="VBoxContainer" parent="MarginContainer2/Control/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/Control/HBoxContainer/LaserCounter"]
+modulate = Color(0.8464, 0.872353, 0.859905, 1)
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_ixl8i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/Control/HBoxContainer/LaserCounter"]
+layout_mode = 2
+texture = ExtResource("1_j6t6t")
+expand_mode = 4
+
+[node name="GrenadeCounter" type="VBoxContainer" parent="MarginContainer2/Control/HBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/Control/HBoxContainer/GrenadeCounter"]
+layout_direction = 1
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_exf8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/Control/HBoxContainer/GrenadeCounter"]
+layout_mode = 2
+texture = ExtResource("2_l2tsn")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 30
+
+[node name="HealtBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
+value = 36.0
+texture_under = ExtResource("3_x7tp0")
+texture_progress = ExtResource("4_jr16e")

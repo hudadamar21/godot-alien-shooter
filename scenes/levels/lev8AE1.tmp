@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://pij16nwtm7lc"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_oaahl"]
+[ext_resource type="PackedScene" uid="uid://citj74ej0yjll" path="res://scenes/player/player.tscn" id="2_1phbj"]
+[ext_resource type="PackedScene" uid="uid://cuoph5yo17oc" path="res://scenes/objects/bed.tscn" id="3_vgpdw"]
+[ext_resource type="PackedScene" uid="uid://b2ldcaqc8sjvb" path="res://scenes/objects/box.tscn" id="4_6jvrw"]
+[ext_resource type="PackedScene" uid="uid://ear58s7fr553" path="res://scenes/objects/drone.tscn" id="5_pk7oo"]
+[ext_resource type="Script" path="res://scenes/objects/drone.gd" id="6_ag3ee"]
+[ext_resource type="PackedScene" uid="uid://2amk2u3j86sj" path="res://scenes/objects/gate.tscn" id="7_seo10"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_oaahl")
+
+[node name="Bed" parent="." instance=ExtResource("3_vgpdw")]
+position = Vector2(652, 249)
+scale = Vector2(0.287321, 0.287321)
+
+[node name="Box" parent="." instance=ExtResource("4_6jvrw")]
+position = Vector2(541, 187)
+scale = Vector2(0.499284, 0.506416)
+
+[node name="Gate" parent="." instance=ExtResource("7_seo10")]
+position = Vector2(10, 63)
+
+[node name="Drone" parent="." instance=ExtResource("5_pk7oo")]
+position = Vector2(-46, 401)
+script = ExtResource("6_ag3ee")
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_1phbj")]
+position = Vector2(361, 237)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="shoot_laser" from="Player" to="." method="_on_player_shoot_laser"]
+[connection signal="throw_grenade" from="Player" to="." method="_on_player_throw_grenade"]

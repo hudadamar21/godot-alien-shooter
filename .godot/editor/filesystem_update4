@@ -1,0 +1,16 @@
+res://scenes/user_interface/ui.tscn
+res://scenes/levels/house.tres
+res://scenes/levels/level.tscn
+res://scenes/player/player.tscn
+res://scenes/levels/outside.tscn
+res://scenes/levels/inside.tscn
+res://globals/globals.gd
+res://scenes/player/player.gd
+res://scenes/user_interface/ui.gd
+res://scenes/levels/level.gd
+res://scenes/levels/outside.gd
+res://globals/transition_layer.tscn
+res://globals/transition_layer.gd
+res://scenes/levels/inside.gd
+res://items/item.tscn
+res://items/item.gd

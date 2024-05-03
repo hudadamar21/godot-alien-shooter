@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://citj74ej0yjll"]
+
+[ext_resource type="Texture2D" uid="uid://dhah4ddpqsudh" path="res://graphics/player/player.png" id="1_etqbd"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_gviqq"]
+[ext_resource type="Texture2D" uid="uid://cso2tvy6ewxmx" path="res://graphics/projectiles/blue.png" id="2_6gq6h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xsamb"]
+radius = 61.0082
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gviqq")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(3, -34)
+texture = ExtResource("1_etqbd")
+
+[node name="LaserImage" type="Sprite2D" parent="PlayerImage"]
+visible = false
+position = Vector2(17, -187)
+texture = ExtResource("2_6gq6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xsamb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

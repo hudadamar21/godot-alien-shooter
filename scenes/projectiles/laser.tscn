@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqpvgohiwtxvf"]
+
+[ext_resource type="Texture2D" uid="uid://cso2tvy6ewxmx" path="res://graphics/projectiles/blue.png" id="1_0d4kv"]
+[ext_resource type="Script" path="res://scenes/projectiles/laser.gd" id="1_eg3pp"]
+[ext_resource type="Texture2D" uid="uid://c7j1lmoyslcth" path="res://graphics/decals/white.png" id="3_5f6c4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_borxc"]
+radius = 7.0
+height = 60.0
+
+[sub_resource type="Gradient" id="Gradient_tjmsi"]
+colors = PackedColorArray(1, 1, 1, 0.6, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x140h"]
+gradient = SubResource("Gradient_tjmsi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q4iai"]
+particle_flag_disable_z = true
+spread = 94.926
+initial_velocity_max = 242.44
+gravity = Vector3(0, 1, 0)
+scale_min = 0.1
+color = Color(0.0627451, 0.882353, 1, 1)
+color_ramp = SubResource("GradientTexture1D_x140h")
+
+[node name="Laser" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_eg3pp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 51)
+texture = ExtResource("1_0d4kv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_borxc")
+
+[node name="SelfDestructTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ParticleLaserDestory" type="GPUParticles2D" parent="."]
+position = Vector2(-1, -25)
+rotation = 1.5708
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_q4iai")
+texture = ExtResource("3_5f6c4")
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.34
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SelfDestructTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
