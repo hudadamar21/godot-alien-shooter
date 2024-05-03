@@ -83,6 +83,7 @@ speed_scale = 2.74
 
 [node name="BodyLight" type="PointLight2D" parent="."]
 scale = Vector2(0.886271, 0.867863)
+energy = 0.5
 texture = ExtResource("5_7qlny")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

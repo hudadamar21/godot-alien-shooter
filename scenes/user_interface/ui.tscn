@@ -38,7 +38,7 @@ theme_override_constants/separation = 15
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer2/Control/HBoxContainer/LaserCounter"]
+[node name="LaserLabel" type="Label" parent="MarginContainer2/Control/HBoxContainer/LaserCounter"]
 modulate = Color(0.8464, 0.872353, 0.859905, 1)
 layout_mode = 2
 text = "20"
@@ -46,7 +46,8 @@ label_settings = SubResource("LabelSettings_ixl8i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/Control/HBoxContainer/LaserCounter"]
+[node name="LaserIcon" type="TextureRect" parent="MarginContainer2/Control/HBoxContainer/LaserCounter"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("1_j6t6t")
 expand_mode = 4
@@ -55,7 +56,7 @@ expand_mode = 4
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer2/Control/HBoxContainer/GrenadeCounter"]
+[node name="GrenadeLabel" type="Label" parent="MarginContainer2/Control/HBoxContainer/GrenadeCounter"]
 layout_direction = 1
 layout_mode = 2
 text = "2"
@@ -63,7 +64,8 @@ label_settings = SubResource("LabelSettings_exf8q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/Control/HBoxContainer/GrenadeCounter"]
+[node name="GrenadeIcon" type="TextureRect" parent="MarginContainer2/Control/HBoxContainer/GrenadeCounter"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_l2tsn")
 expand_mode = 4

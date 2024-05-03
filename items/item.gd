@@ -19,6 +19,11 @@ func _process(delta):
 	$Sprite2D.rotation += rotation_speed * delta
 
 
-func _on_body_entered(body):
-	body.add_item(item)
+func _on_body_entered(_body):
+	if item == 'laser':
+		Globals.laser_amount += 5
+	if item == 'grenade':
+		Globals.grenade_amount += 1
+	if item == 'health' and Globals.health < 100:
+		Globals.health += 20
 	queue_free()

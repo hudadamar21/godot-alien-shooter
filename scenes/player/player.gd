@@ -12,7 +12,6 @@ var dodge_timer: bool = false
 
 signal shoot_laser(pos, player_direction)
 signal throw_grenade(pos, player_direction)
-signal update_stats
 
 func _ready():
 	pass
@@ -81,12 +80,3 @@ func _on_dodge_timer_timeout():
 func _on_can_dodge_timer_timeout():
 	can_dodge = true
 	
-func add_item(item: String) -> void:
-	if item == 'laser':
-		Globals.laser_amount += 5
-	if item == 'grenade':
-		Globals.grenade_amount += 1
-	if item == 'health' and Globals.health_amount < 100:
-		Globals.health_amount += 20
-	
-	update_stats.emit()
