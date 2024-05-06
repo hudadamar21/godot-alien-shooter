@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://blqvu6ov4y0xj"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_66ewf"]
+[ext_resource type="Script" path="res://scenes/items/item.gd" id="1_66ewf"]
 [ext_resource type="Texture2D" uid="uid://c2c136iipvd3k" path="res://graphics/items/orb2.png" id="1_olfmm"]
 [ext_resource type="Texture2D" uid="uid://c2l5vv07vshfw" path="res://graphics/lights/textures/circle.png" id="2_cdwr8"]
 

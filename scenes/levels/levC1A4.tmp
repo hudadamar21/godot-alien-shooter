@@ -7,11 +7,7 @@
 [node name="Level" type="Node2D"]
 script = ExtResource("1_oaahl")
 
-[node name="Decals" type="Node2D" parent="."]
-
 [node name="Ground" type="Node2D" parent="."]
-
-[node name="ContainerItems" type="Node2D" parent="."]
 
 [node name="Items" type="Node2D" parent="."]
 
@@ -24,10 +20,6 @@ position = Vector2(360, 773)
 zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-
-[node name="Lights" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="UI" parent="." instance=ExtResource("3_ubbqj")]
 

@@ -82,8 +82,9 @@ one_shot = true
 speed_scale = 2.74
 
 [node name="BodyLight" type="PointLight2D" parent="."]
-scale = Vector2(0.886271, 0.867863)
-energy = 0.5
+position = Vector2(0, -1.19209e-07)
+scale = Vector2(1.24657, 1.22068)
+energy = 0.1
 texture = ExtResource("5_7qlny")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

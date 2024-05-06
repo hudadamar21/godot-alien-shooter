@@ -1,4 +1,4 @@
-extends ParentLevel
+extends LevelParent
 
 #@export var inside_level_scene: PackedScene
 

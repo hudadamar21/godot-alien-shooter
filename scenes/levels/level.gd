@@ -1,23 +1,20 @@
 extends Node2D
 
-class_name ParentLevel
+class_name LevelParent
 
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
+var item_scene: PackedScene = preload("res://scenes/items/item.tscn")
 
 func _ready():
-	pass
-	#$Player.rotation_degrees = 90
-	
-func _process(_delta):
-	pass 
-	#$Player.rotation_degrees += 50 * delta
-	#if $Player.pos.x > 1000:
-		#print($Player.pos.x)
-		#$Player.pos.x = 0
- 
-#func test():
-	#print("Player - HP: " + str($Player.hp) + ", Exp: " + str($Player.exp) + ", Level: " + str($Player.level))
+	for container in get_tree().get_nodes_in_group("Container"):
+		container.connect('open', _on_container_opened)
+
+func _on_container_opened(item_position, item_direction):
+	var item =  item_scene.instantiate()
+	item.position = item_position
+	item.direction = item_direction
+	$Items.call_deferred("add_child", item)
 
 func _on_player_shoot_laser(pos, player_direction):
 	var laser = laser_scene.instantiate() as Area2D
@@ -39,4 +36,5 @@ func _on_house_player_entered():
 func _on_house_player_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Player/Camera2D,"zoom", Vector2(0.4,0.4), 1)
+	
 
