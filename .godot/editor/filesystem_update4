@@ -1,10 +1,9 @@
-res://scenes/container/toilet.tscn
+res://scenes/levels/inside.tscn
 res://scenes/levels/house.tres
-res://scenes/container/crate.tscn
-res://scenes/levels/level.gd
-res://scenes/items/item.gd
 res://scenes/levels/level.tscn
 res://scenes/levels/outside.tscn
+res://scenes/container/toilet.tscn
+res://scenes/container/crate.tscn
 res://scenes/container/item_container.tscn
-res://scenes/levels/inside.tscn
 res://scenes/player/player.tscn
+res://scenes/items/item.gd

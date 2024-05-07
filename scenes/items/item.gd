@@ -11,11 +11,11 @@ var distance: int = randi_range(150, 250)
 func _ready():
 	
 	if item == 'laser':
-		$Sprite2D.modulate = Color('008bff')
+		$Sprite2D.modulate = Color('1984c5d5')
 	if item == 'grenade':
-		$Sprite2D.modulate = Color('ff7200')
+		$Sprite2D.modulate = Color('b46800d5')
 	if item == 'health':
-		$Sprite2D.modulate = Color('00cf19')
+		$Sprite2D.modulate = Color('588f13d5')
 		
 	#tween
 	var target_pos = position + direction * distance
