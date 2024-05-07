@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://wfeu08k5bgks"]
+[gd_scene load_steps=35 format=3 uid="uid://wfeu08k5bgks"]
 
 [ext_resource type="PackedScene" uid="uid://pij16nwtm7lc" path="res://scenes/levels/level.tscn" id="1_xxv4d"]
 [ext_resource type="TileSet" uid="uid://bmoof80v1ykg" path="res://scenes/levels/house.tres" id="2_1leiq"]
@@ -32,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://bk4sewtertm26" path="res://graphics/objects/infestation/spikes.png" id="14_5xdkr"]
 [ext_resource type="PackedScene" uid="uid://dg83tog1ivar3" path="res://scenes/objects/steam-vent.tscn" id="15_o08tx"]
 [ext_resource type="Texture2D" uid="uid://bmwgmmqjssofe" path="res://graphics/decals/brushes/brush051.png" id="19_4x3mk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmsdm"]
+radius = 38.0132
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7uyr"]
 size = Vector2(717.25, 188.255)
@@ -115,214 +118,290 @@ position = Vector2(1191, 2320)
 rotation = -2.3694
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush055" type="Sprite2D" parent="Decals" index="12"]
+[node name="Brush074" type="Sprite2D" parent="Decals" index="12"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-1877, 3969)
+rotation = -4.71222
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush076" type="Sprite2D" parent="Decals" index="13"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-420, 5177)
+rotation = -2.03513
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush078" type="Sprite2D" parent="Decals" index="14"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-1209, 4677)
+rotation = 2.58467
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush077" type="Sprite2D" parent="Decals" index="15"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-1837, 5421)
+rotation = -2.75725
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush075" type="Sprite2D" parent="Decals" index="16"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-447, 3866)
+rotation = -2.3694
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush079" type="Sprite2D" parent="Decals" index="17"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-1412, 1949)
+rotation = -2.3694
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush080" type="Sprite2D" parent="Decals" index="18"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-442, 701)
+rotation = -3.8911
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush081" type="Sprite2D" parent="Decals" index="19"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(-1886, 301)
+rotation = -5.48704
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush055" type="Sprite2D" parent="Decals" index="20"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(3425, 2348)
 rotation = -2.56288
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush049" type="Sprite2D" parent="Decals" index="13"]
+[node name="Brush049" type="Sprite2D" parent="Decals" index="21"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(1934, 430)
 scale = Vector2(0.796912, 0.796912)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush050" type="Sprite2D" parent="Decals" index="14"]
+[node name="Brush082" type="Sprite2D" parent="Decals" index="22"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(176, -516)
+rotation = 2.02729
+scale = Vector2(0.796912, 0.796912)
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush050" type="Sprite2D" parent="Decals" index="23"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(1502, 585)
 rotation = 0.920395
 scale = Vector2(0.619359, 0.619359)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush051" type="Sprite2D" parent="Decals" index="15"]
+[node name="Brush051" type="Sprite2D" parent="Decals" index="24"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(4399, 1900)
 rotation = -0.799492
 scale = Vector2(0.760986, 0.760986)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush052" type="Sprite2D" parent="Decals" index="16"]
+[node name="Brush052" type="Sprite2D" parent="Decals" index="25"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(4472, 3487)
 rotation = 1.4576
 scale = Vector2(0.760986, 0.760986)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush062" type="Sprite2D" parent="Decals" index="17"]
+[node name="Brush083" type="Sprite2D" parent="Decals" index="26"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(5761, 2679)
+rotation = 2.77213
+scale = Vector2(0.760986, 0.760986)
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush085" type="Sprite2D" parent="Decals" index="27"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(5737, 2004)
+rotation = 7.1551
+scale = Vector2(1.03004, 1.05795)
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush084" type="Sprite2D" parent="Decals" index="28"]
+modulate = Color(0.243137, 0.0352941, 0, 0.356863)
+position = Vector2(5854, 3327)
+rotation = 3.49539
+scale = Vector2(0.760986, 0.760986)
+texture = ExtResource("3_jm7gp")
+
+[node name="Brush062" type="Sprite2D" parent="Decals" index="29"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(3497, 3309)
 rotation = 1.4576
 scale = Vector2(0.760986, 0.760986)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush063" type="Sprite2D" parent="Decals" index="18"]
+[node name="Brush063" type="Sprite2D" parent="Decals" index="30"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(2282, 2698)
 rotation = 7.92699
 scale = Vector2(0.760986, 0.760986)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush053" type="Sprite2D" parent="Decals" index="19"]
+[node name="Brush053" type="Sprite2D" parent="Decals" index="31"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(5322, 3480)
 rotation = -0.127849
 scale = Vector2(0.760986, 0.760986)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush065" type="Sprite2D" parent="Decals" index="20"]
+[node name="Brush065" type="Sprite2D" parent="Decals" index="32"]
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-1912, 783)
 rotation = -2.3545
 scale = Vector2(1, 1)
 texture = ExtResource("5_v8ntj")
 
-[node name="Brush066" type="Sprite2D" parent="Decals" index="21"]
+[node name="Brush066" type="Sprite2D" parent="Decals" index="33"]
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-1884, -585)
 rotation = -0.826589
 scale = Vector2(1.62828, 1.62828)
 texture = ExtResource("5_v8ntj")
 
-[node name="Brush067" type="Sprite2D" parent="Decals" index="22"]
+[node name="Brush067" type="Sprite2D" parent="Decals" index="34"]
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-824, -830)
 rotation = -5.80077
 scale = Vector2(1.16001, 1.16001)
 texture = ExtResource("5_v8ntj")
 
-[node name="Brush054" type="Sprite2D" parent="Decals" index="23"]
+[node name="Brush054" type="Sprite2D" parent="Decals" index="35"]
 modulate = Color(0.243137, 0.0352941, 0, 0.356863)
 position = Vector2(4858, 3511)
 rotation = -1.7267
 scale = Vector2(0.63807, 0.584067)
 texture = ExtResource("3_jm7gp")
 
-[node name="Brush071" type="Sprite2D" parent="Decals" index="24"]
+[node name="Brush071" type="Sprite2D" parent="Decals" index="36"]
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-1938, 2037)
 rotation = -1.35376
 scale = Vector2(1, 1)
 texture = ExtResource("19_4x3mk")
 
-[node name="Brush072" type="Sprite2D" parent="Decals" index="25"]
+[node name="Brush072" type="Sprite2D" parent="Decals" index="37"]
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-497, 2283)
 rotation = 1.36201
 texture = ExtResource("19_4x3mk")
 
-[node name="Brush073" type="Sprite2D" parent="Decals" index="26"]
+[node name="Brush073" type="Sprite2D" parent="Decals" index="38"]
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-1990, 3910)
 rotation = 0.454928
 texture = ExtResource("19_4x3mk")
 
-[node name="Moss1" type="Sprite2D" parent="Decals" index="27"]
+[node name="Moss1" type="Sprite2D" parent="Decals" index="39"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5905, 3009)
 rotation = 0.5361
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss6" type="Sprite2D" parent="Decals" index="28"]
+[node name="Moss6" type="Sprite2D" parent="Decals" index="40"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5596, 3580)
 rotation = -0.94001
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss7" type="Sprite2D" parent="Decals" index="29"]
+[node name="Moss7" type="Sprite2D" parent="Decals" index="41"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5883, 2313)
 rotation = -1.95821
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss8" type="Sprite2D" parent="Decals" index="30"]
+[node name="Moss8" type="Sprite2D" parent="Decals" index="42"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5854, 1970)
 rotation = 0.26268
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss2" type="Sprite2D" parent="Decals" index="31"]
+[node name="Moss2" type="Sprite2D" parent="Decals" index="43"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(3842, 3554)
 rotation = -4.01587
 texture = ExtResource("8_mwh2b")
 
-[node name="Moss3" type="Sprite2D" parent="Decals" index="32"]
+[node name="Moss3" type="Sprite2D" parent="Decals" index="44"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5056, 3475)
 texture = ExtResource("9_qe4xy")
 
-[node name="Moss4" type="Sprite2D" parent="Decals" index="33"]
+[node name="Moss4" type="Sprite2D" parent="Decals" index="45"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5889, 3513)
 rotation = 2.04902
 scale = Vector2(0.684949, 0.684949)
 texture = ExtResource("10_awe2x")
 
-[node name="Moss9" type="Sprite2D" parent="Decals" index="34"]
+[node name="Moss9" type="Sprite2D" parent="Decals" index="46"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5066, 1891)
 rotation = -0.0111787
 scale = Vector2(0.684949, 0.684949)
 texture = ExtResource("10_awe2x")
 
-[node name="Moss10" type="Sprite2D" parent="Decals" index="35"]
+[node name="Moss10" type="Sprite2D" parent="Decals" index="47"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5550.37, 1854.97)
 rotation = -2.73512
 scale = Vector2(0.386302, 0.465553)
 texture = ExtResource("10_awe2x")
 
-[node name="Moss5" type="Sprite2D" parent="Decals" index="36"]
+[node name="Moss5" type="Sprite2D" parent="Decals" index="48"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(5775, 3602)
 texture = ExtResource("11_xbiow")
 
-[node name="Moss11" type="Sprite2D" parent="Decals" index="37"]
+[node name="Moss11" type="Sprite2D" parent="Decals" index="49"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-1920, 4934)
 rotation = 0.5361
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss12" type="Sprite2D" parent="Decals" index="38"]
+[node name="Moss12" type="Sprite2D" parent="Decals" index="50"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-1585, 5473)
 rotation = -4.02021
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss13" type="Sprite2D" parent="Decals" index="39"]
+[node name="Moss13" type="Sprite2D" parent="Decals" index="51"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-334, 4299)
 rotation = -2.42582
 texture = ExtResource("7_8p8h7")
 
-[node name="Moss14" type="Sprite2D" parent="Decals" index="40"]
+[node name="Moss14" type="Sprite2D" parent="Decals" index="52"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-1938, 5469)
 scale = Vector2(1.21605, 1.19608)
 texture = ExtResource("9_qe4xy")
 
-[node name="Moss15" type="Sprite2D" parent="Decals" index="41"]
+[node name="Moss15" type="Sprite2D" parent="Decals" index="53"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-572, 5473)
 rotation = 2.15438
 scale = Vector2(0.684949, 0.684949)
 texture = ExtResource("10_awe2x")
 
-[node name="Moss18" type="Sprite2D" parent="Decals" index="42"]
+[node name="Moss18" type="Sprite2D" parent="Decals" index="54"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-322, 4799)
 rotation = 1.60312
 scale = Vector2(0.684949, 0.684949)
 texture = ExtResource("10_awe2x")
 
-[node name="Moss16" type="Sprite2D" parent="Decals" index="43"]
+[node name="Moss16" type="Sprite2D" parent="Decals" index="55"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
-position = Vector2(-1574.5, 3669.32)
+position = Vector2(-1041, 4174)
 rotation = -0.0111787
 scale = Vector2(0.684949, 0.684949)
 texture = ExtResource("10_awe2x")
 
-[node name="Moss17" type="Sprite2D" parent="Decals" index="44"]
+[node name="Moss17" type="Sprite2D" parent="Decals" index="56"]
 modulate = Color(0.54902, 0.615686, 0.45098, 0.796078)
 position = Vector2(-787, 5482)
 rotation = 0.639823
@@ -838,6 +917,99 @@ position = Vector2(-250, 4323)
 rotation = -1.69489
 texture = ExtResource("14_5xdkr")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Infestation" index="93"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D" index="0"]
+polygon = PackedVector2Array(-778, 5563, -769, 5533, -740, 5516, -727, 5516, -717, 5494, -711, 5474, -686, 5451, -686, 5432, -661, 5404, -636, 5398, -608, 5405, -603, 5426, -597, 5442, -585, 5452, -574, 5463, -571, 5475, -552, 5504, -544, 5515, -526, 5500, -494, 5500, -474, 5519, -479, 5541, -479, 5554, -469, 5553, -455, 5557, -443, 5551, -410, 5545, -381, 5537, -378, 5518, -373, 5484, -339, 5446, -307, 5439, -280, 5439, -279, 5370, -309, 5352, -313, 5304, -269, 5280, -250, 5275, -249, 5186, -269, 5175, -258, 5138, -274, 5093, -291, 5039, -266, 5015, -219, 5004, -201, 5045, -218, 5089, -230, 5131, -230, 5173, -229, 5274, -228, 5393, -237, 5542, -293, 5599, -496, 5610, -776, 5602)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Infestation" index="94"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D2" index="0"]
+polygon = PackedVector2Array(-2084, 5310, -2064, 5317, -2052, 5330, -2030, 5343, -2006, 5360, -2004, 5397, -2023, 5409, -1995, 5440, -1900, 5525, -1864, 5546, -1841, 5523, -1800, 5522, -1781, 5529, -1776, 5543, -1764, 5552, -1758, 5578, -1784, 5595, -1841, 5603, -1948, 5603, -2064, 5555, -2095, 5449, -2098, 5390)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Infestation" index="95"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Infestation/StaticBody2D3" index="0"]
+position = Vector2(-2052, 4841)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Infestation" index="96"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D5" index="0"]
+polygon = PackedVector2Array(-1326, 4106, -1342, 4125, -1349, 4143, -1347, 4152, -1334, 4172, -1320, 4180, -1302, 4180, -1283, 4175, -1255, 4209, -1210, 4218, -1183, 4209, -1153, 4189, -1135, 4164, -1114, 4164, -1090, 4163, -1079, 4148, -1089, 4119, -1017, 4118, -968, 4118, -965, 4144, -952, 4166, -918, 4173, -892, 4162, -858, 4161, -844, 4135, -850, 4108, -869, 4095, -930, 4093, -1022, 4095, -1129, 4095, -1200, 4089, -1285, 4089)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Infestation" index="97"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D6" index="0"]
+polygon = PackedVector2Array(-399, 4111, -412, 4125, -409, 4140, -401, 4158, -373, 4177, -356, 4180, -338, 4209, -287, 4235, -266, 4233, -278, 4258, -290, 4281, -288, 4292, -294, 4315, -290, 4349, -285, 4369, -283, 4409, -272, 4436, -256, 4443, -202, 4410, -199, 4356, -196, 4296, -204, 4189, -208, 4099, -261, 4088, -376, 4089)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Infestation" index="98"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="0"]
+polygon = PackedVector2Array(5433, 3627, 5449, 3599, 5484, 3588, 5492, 3578, 5503, 3553, 5509, 3536, 5532, 3512, 5586, 3514, 5629, 3514, 5657, 3546, 5670, 3573, 5698, 3567, 5732, 3578, 5755, 3595, 5746, 3614, 5806, 3612, 5825, 3602, 5833, 3574, 5840, 3545, 5873, 3493, 5932, 3483, 5925, 3442, 5901, 3416, 5905, 3365, 5965, 3353, 6007, 3362, 6015, 3450, 6000, 3584, 5925, 3653, 5786, 3684, 5532, 3686)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="1"]
+polygon = PackedVector2Array(5937, 3184, 5948, 3195, 5938, 3211, 5927, 3231, 5907, 3251, 5910, 3272, 5934, 3294, 5957, 3304, 5995, 3288, 6002, 3261, 5989, 3224, 5975, 3208, 5965, 3191, 5978, 3165, 5964, 3136, 5944, 3128, 5935, 3168)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="2"]
+polygon = PackedVector2Array(6035, 2066, 6011, 2062, 5994, 2062, 5987, 2069, 5963, 2079, 5927, 2062, 5925, 2042, 5904, 2025, 5863, 2007, 5850, 1985, 5824, 1968, 5796, 1946, 5783, 1927, 5758, 1916, 5731, 1903, 5720, 1886, 5702, 1868, 5714, 1830, 5715, 1809, 5746, 1775, 5847, 1787, 5954, 1833, 6003, 1858, 6021, 1931, 6026, 1997)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="3"]
+polygon = PackedVector2Array(5608, 1821, 5611, 1837, 5586, 1859, 5567, 1855, 5532, 1843, 5513, 1843, 5498, 1862, 5480, 1871, 5456, 1867, 5444, 1851, 5443, 1827, 5534, 1824, 5570.48, 1822.52)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="4"]
+polygon = PackedVector2Array(5224, 1864, 5197, 1865, 5168, 1863, 5148, 1863, 5135, 1870, 5116, 1888, 5076, 1878, 5072, 1864, 5040, 1859, 4983, 1860, 4984, 1861, 4950, 1867, 4940, 1856, 4910, 1862, 4883, 1860, 4863, 1842, 4871, 1806, 4990, 1806, 5095, 1806, 5184, 1806, 5221, 1835)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="5"]
+polygon = PackedVector2Array(4847, 3457, 4867, 3466, 4892, 3472, 4922, 3499, 4935, 3563, 4937, 3613, 4906, 3641, 4826, 3629)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="6"]
+polygon = PackedVector2Array(3727, 3405, 3758, 3407, 3774, 3407, 3782, 3417, 3797, 3434, 3801, 3463, 3791, 3477, 3777, 3485, 3786, 3503, 3800, 3523, 3821, 3517, 3839, 3545, 3852, 3577, 3872, 3583, 3891, 3607, 3889, 3644, 3849, 3663, 3796, 3669, 3730, 3665, 3707, 3567)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Infestation" index="99"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="0"]
+position = Vector2(-1907, 4942)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="1"]
+position = Vector2(-1885, 5154)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="2"]
+position = Vector2(-1356, 4609)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="3"]
+position = Vector2(-2036, 4399)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="4"]
+position = Vector2(-2074, 4457)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="5"]
+position = Vector2(-850, 4535)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="6"]
+position = Vector2(-588, 4748)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="7"]
+position = Vector2(-608, 4308)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="8"]
+position = Vector2(-248, 4692)
+shape = SubResource("CircleShape2D_gmsdm")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="9"]
+position = Vector2(-253, 4764)
+shape = SubResource("CircleShape2D_gmsdm")
+
 [node name="Ground" parent="." index="2"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -1044,6 +1216,7 @@ position = Vector2(4647, 3541)
 rotation = 3.14159
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+visible = false
 color = Color(0.423651, 0.423651, 0.423651, 1)
 energy = 1.5
 blend_mode = 1
