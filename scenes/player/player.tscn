@@ -27,7 +27,7 @@ color_ramp = SubResource("GradientTexture1D_oqorq")
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q17fe"]
 polygon = PackedVector2Array(-53, -38, -48, -43, -41, -46, -36, -47, -30, -49, -28, -51, -22, -55, -15, -56, -13, -55, -4, -58, 2, -59, 8, -59, 12, -58, 18, -61, 24, -59, 28, -56, 31, -51, 34, -47, 38, -44, 43, -39, 42, -36, 45, -32, 46, -29, 52, -29, 56, -27, 61, -23, 67, -18, 72, -13, 76, -9, 80, -10, 85, -11, 89, -9, 94, -4, 102, -4, 108, -2, 110, 2, 114, 2, 122, 3, 123, 6, 121, 8, 126, 6, 130, 10, 132, 16, 132, 23, 131, 29, 128, 33, 124, 34, 121, 32, 118, 31, 119, 34, 121, 36, 117, 38, 110, 37, 107, 35, 106, 37, 102, 40, 101, 43, 97, 45, 94, 45, 95, 49, 94, 52, 91, 54, 62, 54, 58, 52, 56, 48, 56, 45, 63, 42, 59, 42, 54, 41, 50, 41, 45, 42, 42, 42, 40, 40, 39, 43, 34, 45, 27, 48, 22, 48, 16, 52, 8, 56, -1, 60, -12, 61, -18, 61, -27, 61, -33, 57, -38, 53, -39, 46, -43, 41, -45, 34, -51, 30, -54, 25, -55, 21, -52, 18, -54, 15, -58, 12, -61, 7, -63, 0, -62, -7, -62, -15, -61, -22, -58, -28, -55, -31)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 23
 script = ExtResource("1_gviqq")
 
@@ -82,14 +82,16 @@ one_shot = true
 speed_scale = 2.74
 
 [node name="BodyLight" type="PointLight2D" parent="."]
-position = Vector2(0, -1.19209e-07)
-scale = Vector2(1.24657, 1.22068)
-energy = 0.1
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(3.03914, 2.97602)
+energy = 1.5
+shadow_item_cull_mask = 4
 texture = ExtResource("5_7qlny")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 scale = Vector2(0.886271, 0.867863)
 occluder = SubResource("OccluderPolygon2D_q17fe")
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

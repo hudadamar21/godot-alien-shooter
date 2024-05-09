@@ -252,7 +252,6 @@ texture = ExtResource("3_jm7gp")
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-1912, 783)
 rotation = -2.3545
-scale = Vector2(1, 1)
 texture = ExtResource("5_v8ntj")
 
 [node name="Brush066" type="Sprite2D" parent="Decals" index="33"]
@@ -280,7 +279,6 @@ texture = ExtResource("3_jm7gp")
 modulate = Color(0.192157, 0.239216, 0.227451, 0.4)
 position = Vector2(-1938, 2037)
 rotation = -1.35376
-scale = Vector2(1, 1)
 texture = ExtResource("19_4x3mk")
 
 [node name="Brush072" type="Sprite2D" parent="Decals" index="37"]
@@ -517,7 +515,6 @@ texture = ExtResource("10_bmybf")
 modulate = Color(0.323646, 0.393024, 0.197757, 1)
 position = Vector2(-1210, 4151)
 rotation = -2.19375
-scale = Vector2(1, 1)
 texture = ExtResource("7_ypqtk")
 
 [node name="Medium6" type="Sprite2D" parent="Infestation" index="20"]
@@ -931,10 +928,6 @@ polygon = PackedVector2Array(-2084, 5310, -2064, 5317, -2052, 5330, -2030, 5343,
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Infestation" index="95"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Infestation/StaticBody2D3" index="0"]
-position = Vector2(-2052, 4841)
-shape = SubResource("CircleShape2D_gmsdm")
-
 [node name="StaticBody2D5" type="StaticBody2D" parent="Infestation" index="96"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D5" index="0"]
@@ -970,43 +963,35 @@ polygon = PackedVector2Array(3727, 3405, 3758, 3407, 3774, 3407, 3782, 3417, 379
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Infestation" index="99"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="0"]
-position = Vector2(-1907, 4942)
-shape = SubResource("CircleShape2D_gmsdm")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="1"]
-position = Vector2(-1885, 5154)
-shape = SubResource("CircleShape2D_gmsdm")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="0"]
 position = Vector2(-1356, 4609)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="3"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="1"]
 position = Vector2(-2036, 4399)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="4"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="2"]
 position = Vector2(-2074, 4457)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="5"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="3"]
 position = Vector2(-850, 4535)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="6"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="4"]
 position = Vector2(-588, 4748)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="7"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="5"]
 position = Vector2(-608, 4308)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="8"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="6"]
 position = Vector2(-248, 4692)
 shape = SubResource("CircleShape2D_gmsdm")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="9"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="7"]
 position = Vector2(-253, 4764)
 shape = SubResource("CircleShape2D_gmsdm")
 
@@ -1169,10 +1154,6 @@ z_index = -1
 position = Vector2(5801, 3497)
 rotation = -0.000625886
 
-[node name="ContainerItems" parent="." index="3"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
 [node name="Toilet" parent="ContainerItems" index="0" instance=ExtResource("3_ea8t5")]
 position = Vector2(1561, 415)
 
@@ -1211,14 +1192,9 @@ rotation = 3.14159
 position = Vector2(4647, 3541)
 rotation = 3.14159
 
-[node name="Crate8" parent="ContainerItems" index="11" instance=ExtResource("3_k63kk")]
-position = Vector2(4647, 3541)
-rotation = 3.14159
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
-visible = false
 color = Color(0.423651, 0.423651, 0.423651, 1)
-energy = 1.5
+energy = 2.0
 blend_mode = 1
 
 [node name="ExitGateArea" type="Area2D" parent="." index="5"]
@@ -1227,7 +1203,7 @@ blend_mode = 1
 position = Vector2(1170.38, 3677.13)
 shape = SubResource("RectangleShape2D_n7uyr")
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(1190, 3506)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true

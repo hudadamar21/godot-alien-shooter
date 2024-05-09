@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var grenade_label: Label = $MarginContainer2/Control/HBoxContainer/GrenadeCounter/GrenadeLabel
 @onready var laser_icon: TextureRect = %LaserIcon
 @onready var grenade_icon: TextureRect = %GrenadeIcon
-@onready var health_value: TextureProgressBar = $MarginContainer/HealtBar
+@onready var health_value: TextureProgressBar = $MarginContainer/HealtBar 
 
 var red_color: Color = Color("ff4636")
 var green_color: Color = Color("ffffff")

@@ -12,5 +12,6 @@ func hit():
 	tween.tween_property($Sprite2D,"flip_h", true, 0.1)
 	tween.tween_property($Sprite2D,"flip_h", false, 0.1)
 	health -= 10
-	if health == 0:
+	
+	if health <= 0:
 		queue_free()

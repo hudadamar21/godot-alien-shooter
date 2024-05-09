@@ -39,6 +39,7 @@ func _process(_delta):
 	else:
 		velocity = direction * speed
 	move_and_slide()
+	Globals.player_position = global_position
 	
 	look_at(get_global_mouse_position())
 	
@@ -63,7 +64,7 @@ func _process(_delta):
 		
 	var tween = create_tween()
 	if Globals.current_scene == 'inside':
-		tween.tween_property($BodyLight, "energy", 1, 0.5)
+		tween.tween_property($BodyLight, "energy", 1.5, 0.5)
 	if Globals.current_scene == 'outside':
 		tween.tween_property($BodyLight, "energy", 0, 0.5)
 
@@ -80,3 +81,7 @@ func _on_dodge_timer_timeout():
 func _on_can_dodge_timer_timeout():
 	can_dodge = true
 	
+func hit():
+	Globals.health -= 10
+	if Globals.health <= 0:
+		GameOverScreen.on_game_over()

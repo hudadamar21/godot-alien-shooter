@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c46v1lkop31q3"]
+[gd_scene load_steps=24 format=3 uid="uid://c46v1lkop31q3"]
 
 [ext_resource type="PackedScene" uid="uid://pij16nwtm7lc" path="res://scenes/levels/level.tscn" id="1_wow86"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_a7xs3"]
@@ -15,11 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://dg83tog1ivar3" path="res://scenes/objects/steam-vent.tscn" id="12_aojnd"]
 [ext_resource type="PackedScene" uid="uid://2amk2u3j86sj" path="res://scenes/objects/gate.tscn" id="13_8lhmx"]
 [ext_resource type="PackedScene" uid="uid://c1y86nksbdjyg" path="res://scenes/houses/house.tscn" id="14_n2xl5"]
-[ext_resource type="PackedScene" uid="uid://ear58s7fr553" path="res://scenes/objects/drone.tscn" id="14_x7tcf"]
-[ext_resource type="Script" path="res://scenes/objects/drone.gd" id="15_4iu80"]
-[ext_resource type="PackedScene" uid="uid://blqvu6ov4y0xj" path="res://scenes/items/item.tscn" id="18_073em"]
+[ext_resource type="PackedScene" uid="uid://ear58s7fr553" path="res://scenes/enemies/drone.tscn" id="14_x7tcf"]
+[ext_resource type="Script" path="res://scenes/enemies/drone.gd" id="15_4iu80"]
 [ext_resource type="PackedScene" uid="uid://ctlr08eollx1u" path="res://scenes/container/crate.tscn" id="19_c787h"]
-[ext_resource type="PackedScene" uid="uid://detofam4qg548" path="res://scenes/container/toilet.tscn" id="20_7tfxv"]
+[ext_resource type="PackedScene" uid="uid://isquhgeum3ry" path="res://scenes/enemies/scout.tscn" id="21_qgpvt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jo74q"]
 resource_name = "walls"
@@ -251,18 +250,20 @@ script = ExtResource("2_a7xs3")
 z_index = 1
 position = Vector2(13, -379)
 
+[node name="Crate" parent="Gate" index="3" instance=ExtResource("19_c787h")]
+position = Vector2(-476, 696)
+
+[node name="Crate2" parent="Gate" index="4" instance=ExtResource("19_c787h")]
+position = Vector2(1248, 689)
+
 [node name="Drone2" parent="." index="2" instance=ExtResource("14_x7tcf")]
 position = Vector2(374, 1097)
 script = ExtResource("15_4iu80")
 
-[node name="Item" parent="." index="3" instance=ExtResource("18_073em")]
-position = Vector2(131, 523)
-
-[node name="Toilet" parent="." index="4" instance=ExtResource("20_7tfxv")]
-position = Vector2(1088, 554)
-
-[node name="Crate" parent="." index="5" instance=ExtResource("19_c787h")]
-position = Vector2(781, 854)
+[node name="Ground" parent="." index="3"]
+z_index = -1
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -352,8 +353,13 @@ position = Vector2(-450, 491)
 position = Vector2(-5987, 2547)
 rotation = -1.57079
 
-[node name="Player" parent="." index="10"]
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("21_qgpvt")]
+position = Vector2(820, 893)
+
+[node name="Player" parent="." index="8"]
+z_index = 1
 position = Vector2(362, 378)
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
