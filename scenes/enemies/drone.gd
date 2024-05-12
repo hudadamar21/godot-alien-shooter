@@ -2,18 +2,20 @@ extends CharacterBody2D
 
 var health: int = 100
 var active: bool = false
-var speed: int = 200
+var speed: int = 300
 
 func _ready():
 	$Explosion.hide()
 	$Sprite2D.show()
 
-func _process(_delta):
+func _process(delta):
 	if active:
 		look_at(Globals.player_position)
 		var direction = (Globals.player_position - position).normalized()
 		velocity = direction * speed
-		move_and_slide()
+		var collision = move_and_collide(velocity * delta)
+		if collision:
+			$AnimationPlayer.play('explosion')
 
 func hit():
 	var tween = create_tween()
@@ -25,5 +27,5 @@ func hit():
 		$AnimationPlayer.play('explosion')
 	
 
-func _on_notice_area_body_entered(body):
+func _on_notice_area_body_entered(_body):
 	active = true

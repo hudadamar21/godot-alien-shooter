@@ -3,3 +3,4 @@ res://scenes/levels/house.tres
 res://scenes/enemies/enemy.gdshader
 res://scenes/levels/outside.tscn
 res://scenes/projectiles/grenade.tscn
+res://scenes/enemies/drone.gd
