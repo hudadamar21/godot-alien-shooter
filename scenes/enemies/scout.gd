@@ -43,7 +43,6 @@ func hit():
 func _on_laser_timer_timeout():
 	can_laser = true
 
-
 func _on_hit_timer_timeout():
 	vulnerable = true
 	$Sprite2D.material.set_shader_parameter('progress', 0)

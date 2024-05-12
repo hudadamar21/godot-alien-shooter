@@ -8,6 +8,8 @@ var player_vunerable: bool = true
 
 var health = 100:
 	set(value):
+		if health <= 0:
+			GameOverScreen.on_game_over()
 		if value > health:
 			health = min(value, 100)
 		else:

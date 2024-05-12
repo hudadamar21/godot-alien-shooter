@@ -24,6 +24,7 @@ func _on_player_shoot_laser(pos, player_direction):
 	
 func _on_scout_laser(pos, direction):
 	create_laser(pos, direction)
+
 	
 func _on_player_throw_grenade(pos, player_direction):
 	var grenade = grenade_scene.instantiate() as RigidBody2D

@@ -83,5 +83,3 @@ func _on_can_dodge_timer_timeout():
 	
 func hit():
 	Globals.health -= 10
-	if Globals.health <= 0:
-		GameOverScreen.on_game_over()
