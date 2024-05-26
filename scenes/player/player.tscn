@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://citj74ej0yjll"]
+[gd_scene load_steps=16 format=3 uid="uid://citj74ej0yjll"]
 
 [ext_resource type="Texture2D" uid="uid://dhah4ddpqsudh" path="res://graphics/player/player.png" id="1_etqbd"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_gviqq"]
 [ext_resource type="Texture2D" uid="uid://cso2tvy6ewxmx" path="res://graphics/projectiles/blue.png" id="2_6gq6h"]
 [ext_resource type="Texture2D" uid="uid://c7j1lmoyslcth" path="res://graphics/decals/white.png" id="4_jwd0h"]
 [ext_resource type="Texture2D" uid="uid://c2l5vv07vshfw" path="res://graphics/lights/textures/circle.png" id="5_7qlny"]
+[ext_resource type="Texture2D" uid="uid://dkt2puc78i821" path="res://graphics/explosions/explosion_1.png" id="6_qa82t"]
+[ext_resource type="AudioStream" uid="uid://h76g5ls7ah12" path="res://audio/solid_impact.ogg" id="7_agg03"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xsamb"]
 radius = 61.0082
@@ -26,6 +28,79 @@ color_ramp = SubResource("GradientTexture1D_oqorq")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q17fe"]
 polygon = PackedVector2Array(-53, -38, -48, -43, -41, -46, -36, -47, -30, -49, -28, -51, -22, -55, -15, -56, -13, -55, -4, -58, 2, -59, 8, -59, 12, -58, 18, -61, 24, -59, 28, -56, 31, -51, 34, -47, 38, -44, 43, -39, 42, -36, 45, -32, 46, -29, 52, -29, 56, -27, 61, -23, 67, -18, 72, -13, 76, -9, 80, -10, 85, -11, 89, -9, 94, -4, 102, -4, 108, -2, 110, 2, 114, 2, 122, 3, 123, 6, 121, 8, 126, 6, 130, 10, 132, 16, 132, 23, 131, 29, 128, 33, 124, 34, 121, 32, 118, 31, 119, 34, 121, 36, 117, 38, 110, 37, 107, 35, 106, 37, 102, 40, 101, 43, 97, 45, 94, 45, 95, 49, 94, 52, 91, 54, 62, 54, 58, 52, 56, 48, 56, 45, 63, 42, 59, 42, 54, 41, 50, 41, 45, 42, 42, 42, 40, 40, 39, 43, 34, 45, 27, 48, 22, 48, 16, 52, 8, 56, -1, 60, -12, 61, -18, 61, -27, 61, -33, 57, -38, 53, -39, 46, -43, 41, -45, 34, -51, 30, -54, 25, -55, 21, -52, 18, -54, 15, -58, 12, -61, 7, -63, 0, -62, -7, -62, -15, -61, -22, -58, -28, -55, -31)
+
+[sub_resource type="Animation" id="Animation_wj2u3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_5q2mi"]
+resource_name = "hit_explosion"
+length = 0.3667
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666, 0.1332, 0.1998, 0.2664, 0.333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 5, 4, 3, 2, 1]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3663),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1998, 0.3663),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_41ije"]
+_data = {
+"RESET": SubResource("Animation_wj2u3"),
+"hit_explosion": SubResource("Animation_5q2mi")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 23
@@ -92,6 +167,25 @@ texture = ExtResource("5_7qlny")
 scale = Vector2(0.886271, 0.867863)
 occluder = SubResource("OccluderPolygon2D_q17fe")
 metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Explosion" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, -1)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("6_qa82t")
+hframes = 8
+vframes = 8
+frame = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+root_node = NodePath("../Explosion")
+libraries = {
+"": SubResource("AnimationLibrary_41ije")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_agg03")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

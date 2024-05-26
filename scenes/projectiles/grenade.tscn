@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvu2frppj7etj"]
+[gd_scene load_steps=12 format=3 uid="uid://dvu2frppj7etj"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_bjjen"]
 [ext_resource type="Texture2D" uid="uid://va55arg5jejl" path="res://graphics/projectiles/grenade.png" id="1_kmiu4"]
 [ext_resource type="Texture2D" uid="uid://c53dxy14d8vmj" path="res://graphics/explosions/explosion_3.png" id="3_obe33"]
+[ext_resource type="AudioStream" uid="uid://bhmq0knm727ws" path="res://audio/explosion.wav" id="4_sbx4i"]
 [ext_resource type="Texture2D" uid="uid://c2l5vv07vshfw" path="res://graphics/lights/textures/circle.png" id="4_ussf6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v6myw"]
@@ -84,7 +85,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ro4vl"]
 resource_name = "explosion"
-length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,7 +104,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -119,6 +119,33 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_sbx4i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosion:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -148,7 +175,6 @@ scale = Vector2(0.4, 0.411)
 texture = ExtResource("1_kmiu4")
 
 [node name="Explosion" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("3_obe33")
 hframes = 8
 vframes = 8
@@ -165,3 +191,5 @@ color = Color(0.532433, 0, 0.0329541, 1)
 energy = 0.0
 texture = ExtResource("4_ussf6")
 texture_scale = 0.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

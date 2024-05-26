@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://isquhgeum3ry"]
+[gd_scene load_steps=8 format=3 uid="uid://isquhgeum3ry"]
 
 [ext_resource type="Texture2D" uid="uid://b16g60vl4xqd0" path="res://graphics/enemies/scout.png" id="1_7y6u2"]
 [ext_resource type="Script" path="res://scenes/enemies/scout.gd" id="1_weeao"]
 [ext_resource type="Shader" path="res://scenes/enemies/enemy.gdshader" id="2_nifeh"]
-[ext_resource type="Texture2D" uid="uid://lx0gjevn2n11" path="res://graphics/ui/progress_bar/bg.png" id="3_psafy"]
-[ext_resource type="Texture2D" uid="uid://dfdy7ficyhvix" path="res://graphics/ui/progress_bar/progress.png" id="4_edsyc"]
+[ext_resource type="AudioStream" uid="uid://h76g5ls7ah12" path="res://audio/solid_impact.ogg" id="6_vqdih"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_23pxt"]
 shader = ExtResource("2_nifeh")
@@ -15,7 +14,7 @@ shader_parameter/progress = 0.0
 radius = 51.4781
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tltw"]
-radius = 1160.23
+radius = 889.036
 
 [node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 collision_layer = 2
@@ -29,12 +28,10 @@ rotation = 1.57079
 texture = ExtResource("1_7y6u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_0jpct")
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
-collision_layer = 16
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_8tltw")
@@ -47,15 +44,6 @@ position = Vector2(113, -27)
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions"]
 position = Vector2(120, 11)
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -125.0
-offset_top = -118.0
-offset_right = 175.0
-offset_bottom = -88.0
-value = 100.0
-texture_under = ExtResource("3_psafy")
-texture_progress = ExtResource("4_edsyc")
-
 [node name="Timers" type="Node" parent="."]
 
 [node name="LaserTimer" type="Timer" parent="Timers"]
@@ -65,6 +53,9 @@ one_shot = true
 [node name="HitTimer" type="Timer" parent="Timers"]
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vqdih")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_area_2d_body_exited"]

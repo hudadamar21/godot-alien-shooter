@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctlr08eollx1u"]
+[gd_scene load_steps=7 format=3 uid="uid://ctlr08eollx1u"]
 
 [ext_resource type="PackedScene" uid="uid://bxc6wnbaaanth" path="res://scenes/container/item_container.tscn" id="1_ehfu8"]
 [ext_resource type="Script" path="res://scenes/container/crate.gd" id="2_0to7a"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cq4p0"]
 size = Vector2(400.5, 177.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jthwp"]
+size = Vector2(515, 295)
 
 [node name="Crate" instance=ExtResource("1_ehfu8")]
 script = ExtResource("2_0to7a")
@@ -66,3 +69,11 @@ position = Vector2(150, -12)
 
 [node name="SpawnPositions#Marker2D17" type="Marker2D" parent="SpawnPositions" index="14"]
 position = Vector2(114, 29)
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_jthwp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

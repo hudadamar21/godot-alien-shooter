@@ -14,7 +14,7 @@ signal shoot_laser(pos, player_direction)
 signal throw_grenade(pos, player_direction)
 
 func _ready():
-	pass
+	$Node2D/Explosion.visible = false
 	#pos = Vector2(300, 200)
 	#position = pos
 	#test_scale = 2
@@ -83,3 +83,9 @@ func _on_can_dodge_timer_timeout():
 	
 func hit():
 	Globals.health -= 10
+	$AudioStreamPlayer2D.play()
+	
+func hit_explosion():
+	Globals.health -= 20
+	$AudioStreamPlayer2D.play()
+	$Node2D/AnimationPlayer.play("hit_explosion")

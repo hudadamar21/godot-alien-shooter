@@ -8,8 +8,6 @@ var player_vunerable: bool = true
 
 var health = 100:
 	set(value):
-		if health <= 0:
-			GameOverScreen.on_game_over()
 		if value > health:
 			health = min(value, 100)
 		else:
@@ -17,6 +15,8 @@ var health = 100:
 				health = value
 				player_vunerable = false
 				player_invunerable_timer()
+				if health <= 0:
+					GameOverScreen.on_game_over()
 		stats_changed.emit()
 
 var laser_amount = 20:
@@ -32,3 +32,4 @@ var grenade_amount = 5:
 func player_invunerable_timer(): 
 	await get_tree().create_timer(0.5).timeout
 	player_vunerable = true
+	

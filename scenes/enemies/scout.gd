@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
-@onready var health: int = $TextureProgressBar.max_value
+var health: int = 50
 var player_nearby: bool
 var can_laser: bool = true
 var vulnerable: bool = true
 var right_gun_use: bool = true
+
+@onready var current_direction: Vector2 =  Vector2.DOWN.rotated(rotation)
+signal open(pos, direction) 
 
 signal laser(pos, direction)
 
@@ -31,12 +34,13 @@ func _on_laser_cooldown_timeout():
 
 func hit():
 	if vulnerable:
+		$AudioStreamPlayer2D.play()
 		health -= 10
 		vulnerable = false
 		$Timers/HitTimer.start()
-		$TextureProgressBar.value -= 10
-		$Sprite2D.material.set_shader_parameter('progress', 0.8)
+		$Sprite2D.material.set_shader_parameter('progress', 0.3)
 	if health <= 0:
+		open.emit(position, current_direction)
 		queue_free()
 
 

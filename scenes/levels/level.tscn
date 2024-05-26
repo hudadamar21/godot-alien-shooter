@@ -7,9 +7,9 @@
 [node name="Level" type="Node2D"]
 script = ExtResource("1_oaahl")
 
-[node name="Decals" type="Node2D" parent="."]
-
 [node name="Ground" type="Node2D" parent="."]
+
+[node name="Decals" type="Node2D" parent="."]
 
 [node name="ContainerItems" type="Node2D" parent="."]
 

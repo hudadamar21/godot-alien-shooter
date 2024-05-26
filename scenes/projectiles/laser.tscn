@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqpvgohiwtxvf"]
+[gd_scene load_steps=9 format=3 uid="uid://dqpvgohiwtxvf"]
 
 [ext_resource type="Texture2D" uid="uid://cso2tvy6ewxmx" path="res://graphics/projectiles/blue.png" id="1_0d4kv"]
 [ext_resource type="Script" path="res://scenes/projectiles/laser.gd" id="1_eg3pp"]
 [ext_resource type="Texture2D" uid="uid://c7j1lmoyslcth" path="res://graphics/decals/white.png" id="3_5f6c4"]
+[ext_resource type="AudioStream" uid="uid://dl16i6ixkjyl1" path="res://audio/laser.wav" id="4_cf3ev"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_borxc"]
 radius = 7.0
@@ -53,6 +54,13 @@ speed_scale = 2.34
 [node name="DestroyTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cf3ev")
+volume_db = -18.368
+pitch_scale = 1.64
+autoplay = true
+attenuation = 8.63169e-05
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="SelfDestructTimer" to="." method="_on_timer_timeout"]

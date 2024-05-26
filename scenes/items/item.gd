@@ -2,7 +2,7 @@ extends Area2D
 
 
 var rotation_speed = 5
-var available_items = ['laser','laser','laser','laser', 'grenade', 'health']
+var available_items = ['laser', 'laser', 'grenade', 'health']
 var item = available_items[randi()%len(available_items)]
 
 var direction: Vector2
