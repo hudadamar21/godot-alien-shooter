@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var laser_icon: TextureRect = %LaserIcon
 @onready var grenade_icon: TextureRect = %GrenadeIcon
 @onready var health_value: TextureProgressBar = $MarginContainer/HealtBar 
+@onready var artefact_found_value: Label = $MarginContainer3/Control/HBoxContainer/ArtefactFound
 
 var red_color: Color = Color("ff4636")
 var green_color: Color = Color("ffffff")
@@ -24,10 +25,14 @@ func update_grenade_value():
 func update_health_value():
 	health_value.value = Globals.health
 
+func update_artefact_found():
+	artefact_found_value.text = str(Globals.artefact_found) + "/6"
+
 func update_stats_value():
 	update_laser_value()
 	update_grenade_value()
 	update_health_value()
+	update_artefact_found()
 
 func update_color(amount: int, label: Label, icon: TextureRect) -> void:
 	if amount == 0:

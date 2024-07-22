@@ -7,8 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://bhmq0knm727ws" path="res://audio/explosion.wav" id="5_7n54k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gueo8"]
+resource_local_to_scene = true
 shader = ExtResource("2_r8xs3")
-shader_parameter/color = Color(0.831373, 0.380392, 0.243137, 1)
+shader_parameter/color = Color(0.619608, 0.00392157, 0, 1)
 shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c0enf"]
@@ -131,6 +132,7 @@ rotation = 1.57079
 texture = ExtResource("1_ffvnc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_c0enf")
@@ -139,6 +141,7 @@ shape = SubResource("CircleShape2D_c0enf")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+visible = false
 shape = SubResource("CircleShape2D_1lher")
 
 [node name="Explosion" type="Sprite2D" parent="."]

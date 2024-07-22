@@ -8,6 +8,7 @@ collision_layer = 4
 collision_mask = 11
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(54.5, 0)
 scale = Vector2(6.45, 1)
 polygon = PackedVector2Array(-13.1008, -79, 33.7209, -78, 41.3178, -65, 45.969, -50, 50.9302, -21, 55.4264, 18, 52.1705, 69, 49.3798, 80, 30.9302, 78, -53.4109, 78, -69.5349, 77, -71.5504, 64, -74.1861, 17, -66.8992, -38, -61.1628, -64, -53.4109, -77)

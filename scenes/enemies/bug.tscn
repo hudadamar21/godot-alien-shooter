@@ -36,8 +36,9 @@
 [ext_resource type="AudioStream" uid="uid://b45i4rrogdruf" path="res://audio/organic_impact.mp3" id="34_viwgs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5sd7i"]
+resource_local_to_scene = true
 shader = ExtResource("2_g28xw")
-shader_parameter/color = Color(0.831373, 0.380392, 0.243137, 1)
+shader_parameter/color = Color(0.619608, 0.00392157, 0, 1)
 shader_parameter/progress = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2mxh0"]
@@ -183,12 +184,12 @@ scale_curve = SubResource("CurveTexture_w1sce")
 color_ramp = SubResource("GradientTexture1D_6e080")
 anim_offset_max = 1.0
 
-[node name="Bug" type="CharacterBody2D"]
+[node name="Bug" type="CharacterBody2D" groups=["Entity"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_hokxr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Entity"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_5sd7i")
 position = Vector2(10, -1)
 rotation = 1.5708
@@ -199,15 +200,18 @@ frame = 20
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_ja1qx")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_8gfl6")
 
 [node name="NoticeArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]

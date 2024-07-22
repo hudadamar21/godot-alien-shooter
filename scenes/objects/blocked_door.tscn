@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://com7lx305c7gu"]
+
+[ext_resource type="Script" path="res://scenes/objects/blocked_door.gd" id="1_prrr6"]
+[ext_resource type="Texture2D" uid="uid://gkonvdld52rj" path="res://graphics/objects/infestation/large.png" id="1_w483h"]
+[ext_resource type="Texture2D" uid="uid://6kemly3m6oeg" path="res://graphics/objects/infestation/line.png" id="2_oiiph"]
+[ext_resource type="Texture2D" uid="uid://bk4sewtertm26" path="res://graphics/objects/infestation/spikes.png" id="3_01wqo"]
+[ext_resource type="Texture2D" uid="uid://d1sbayuagorff" path="res://graphics/objects/infestation/small_2.png" id="4_nnyon"]
+[ext_resource type="Texture2D" uid="uid://c1w1bea7pldo7" path="res://graphics/objects/infestation/small_3.png" id="5_whk4s"]
+[ext_resource type="Texture2D" uid="uid://bm1w1r4mqdgap" path="res://graphics/objects/infestation/medium.png" id="6_qq5dn"]
+[ext_resource type="AudioStream" uid="uid://b45i4rrogdruf" path="res://audio/organic_impact.mp3" id="8_kxwii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw8f6"]
+size = Vector2(326, 550)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvsm"]
+size = Vector2(272.5, 705.5)
+
+[node name="BlockedDoor" type="Node2D"]
+script = ExtResource("1_prrr6")
+
+[node name="StageClearArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StageClearArea"]
+position = Vector2(-275, 36.8)
+shape = SubResource("RectangleShape2D_vw8f6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StageClearArea"]
+position = Vector2(-275, 36.8)
+shape = SubResource("RectangleShape2D_vw8f6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(304, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-166, -46)
+shape = SubResource("RectangleShape2D_ddvsm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(2105, -1331.2)
+polygon = PackedVector2Array(-2073, 1072, -2050, 1119, -2019, 1136, -2007, 1180, -2019, 1201, -1996, 1252, -1974, 1306, -2019, 1530, -2011, 1565, -2069, 1642, -2200, 1642, -2206, 1066)
+
+[node name="Large" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-53, -88.2)
+texture = ExtResource("1_w483h")
+
+[node name="Line" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(56.9998, -88.1999)
+rotation = -0.18989
+texture = ExtResource("2_oiiph")
+
+[node name="Spikes" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(54, -165.2)
+texture = ExtResource("3_01wqo")
+
+[node name="Small2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(83, -69.2)
+texture = ExtResource("4_nnyon")
+
+[node name="Spikes2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(20, 175.8)
+texture = ExtResource("3_01wqo")
+
+[node name="Spikes3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(6, -24.2)
+texture = ExtResource("3_01wqo")
+
+[node name="Small3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(29, 37.8)
+texture = ExtResource("5_whk4s")
+
+[node name="Medium" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(61, 221.8)
+texture = ExtResource("6_qq5dn")
+
+[node name="Line3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(72, 131.8)
+rotation = 0.254437
+texture = ExtResource("2_oiiph")
+
+[node name="Medium2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(44, 106.8)
+texture = ExtResource("6_qq5dn")
+
+[node name="Large2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-57, 148.8)
+texture = ExtResource("1_w483h")
+
+[node name="Line2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-18, 94.8)
+rotation = 0.613672
+texture = ExtResource("2_oiiph")
+
+[node name="Medium3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(15, -118.2)
+texture = ExtResource("6_qq5dn")
+
+[node name="Spikes4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-19, 46.8)
+texture = ExtResource("3_01wqo")
+
+[node name="Spikes5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-64, 16.8)
+texture = ExtResource("3_01wqo")
+
+[node name="BlockedBreak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_kxwii")
+
+[connection signal="body_entered" from="StageClearArea" to="." method="_on_stage_clear_area_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

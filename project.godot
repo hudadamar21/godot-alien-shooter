@@ -21,6 +21,7 @@ Globals="*res://globals/globals.gd"
 Music="*res://globals/music.tscn"
 TransitionLayer="*res://globals/transition_layer.tscn"
 GameOverScreen="*res://globals/game_over_screen.tscn"
+GameFinishScreen="*res://globals/game_finish_screen.tscn"
 
 [display]
 

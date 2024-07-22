@@ -7,9 +7,10 @@ var active: bool = false
 var player_near: bool = false
 var vulnerable: bool = true
 
-@onready var current_direction: Vector2 =  Vector2.DOWN.rotated(rotation)
 signal open(pos, direction) 
-	
+
+
+@onready var current_direction: Vector2 =  Vector2.DOWN.rotated(rotation)
 
 func _process(_delta):
 	var direction: Vector2 = (Globals.player_position - position).normalized()

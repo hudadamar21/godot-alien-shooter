@@ -6,8 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://h76g5ls7ah12" path="res://audio/solid_impact.ogg" id="6_vqdih"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_23pxt"]
+resource_local_to_scene = true
 shader = ExtResource("2_nifeh")
-shader_parameter/color = Color(0.832702, 0.378796, 0.243828, 1)
+shader_parameter/color = Color(0.61835, 0.0033424, 3.36915e-07, 1)
 shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0jpct"]
@@ -28,9 +29,11 @@ rotation = 1.57079
 texture = ExtResource("1_7y6u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_0jpct")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]

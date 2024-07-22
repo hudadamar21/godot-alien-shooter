@@ -7,8 +7,8 @@ var vulnerable: bool = true
 var right_gun_use: bool = true
 
 @onready var current_direction: Vector2 =  Vector2.DOWN.rotated(rotation)
-signal open(pos, direction) 
 
+signal open(pos, direction) 
 signal laser(pos, direction)
 
 func _process(_delta):

@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://o2ejjmc5dxu0"]
+
+[ext_resource type="Script" path="res://globals/game_finish_screen.gd" id="1_trir0"]
+
+[node name="GameFinishScreen" type="CanvasLayer"]
+script = ExtResource("1_trir0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0341938, 0.0768556, 0.186668, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.0
+offset_top = -83.29
+offset_right = 305.0
+offset_bottom = 48.71
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 96
+text = "GAME FINISH"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 49.28
+offset_right = 54.0
+offset_bottom = 85.28
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Play Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://wfeu08k5bgks"]
+[gd_scene load_steps=40 format=3 uid="uid://wfeu08k5bgks"]
 
 [ext_resource type="PackedScene" uid="uid://pij16nwtm7lc" path="res://scenes/levels/level.tscn" id="1_xxv4d"]
 [ext_resource type="TileSet" uid="uid://bmoof80v1ykg" path="res://scenes/levels/house.tres" id="2_1leiq"]
@@ -32,9 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://bk4sewtertm26" path="res://graphics/objects/infestation/spikes.png" id="14_5xdkr"]
 [ext_resource type="PackedScene" uid="uid://dg83tog1ivar3" path="res://scenes/objects/steam-vent.tscn" id="15_o08tx"]
 [ext_resource type="Texture2D" uid="uid://bmwgmmqjssofe" path="res://graphics/decals/brushes/brush051.png" id="19_4x3mk"]
+[ext_resource type="PackedScene" uid="uid://dullrjtuw2gna" path="res://scenes/items/artefact.tscn" id="30_kuip7"]
 [ext_resource type="PackedScene" uid="uid://ear58s7fr553" path="res://scenes/enemies/drone.tscn" id="30_rpc0u"]
 [ext_resource type="PackedScene" uid="uid://isquhgeum3ry" path="res://scenes/enemies/scout.tscn" id="31_svh24"]
 [ext_resource type="PackedScene" uid="uid://bodcm4c3euti0" path="res://scenes/enemies/bug.tscn" id="32_2gbsx"]
+[ext_resource type="PackedScene" uid="uid://com7lx305c7gu" path="res://scenes/objects/blocked_door.tscn" id="37_8vcdp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmsdm"]
 radius = 38.0132
@@ -718,6 +720,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D" index="0"]
+visible = false
 polygon = PackedVector2Array(-778, 5563, -769, 5533, -740, 5516, -727, 5516, -717, 5494, -711, 5474, -686, 5451, -686, 5432, -661, 5404, -636, 5398, -608, 5405, -603, 5426, -597, 5442, -585, 5452, -574, 5463, -571, 5475, -552, 5504, -544, 5515, -526, 5500, -494, 5500, -474, 5519, -479, 5541, -479, 5554, -469, 5553, -455, 5557, -443, 5551, -410, 5545, -381, 5537, -378, 5518, -373, 5484, -339, 5446, -307, 5439, -280, 5439, -279, 5370, -309, 5352, -313, 5304, -269, 5280, -250, 5275, -249, 5186, -269, 5175, -258, 5138, -274, 5093, -291, 5039, -266, 5015, -219, 5004, -201, 5045, -218, 5089, -230, 5131, -230, 5173, -229, 5274, -228, 5393, -237, 5542, -293, 5599, -496, 5610, -776, 5602)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Infestation" index="94"]
@@ -725,83 +728,97 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D2" index="0"]
+visible = false
 polygon = PackedVector2Array(-2084, 5310, -2064, 5317, -2052, 5330, -2030, 5343, -2006, 5360, -2004, 5397, -2023, 5409, -1995, 5440, -1900, 5525, -1864, 5546, -1841, 5523, -1800, 5522, -1781, 5529, -1776, 5543, -1764, 5552, -1758, 5578, -1784, 5595, -1841, 5603, -1948, 5603, -2064, 5555, -2095, 5449, -2098, 5390)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Infestation" index="95"]
-collision_layer = 4
-collision_mask = 3
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Infestation" index="96"]
+[node name="StaticBody2D5" type="StaticBody2D" parent="Infestation" index="95"]
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D5" index="0"]
+visible = false
 polygon = PackedVector2Array(-1326, 4106, -1342, 4125, -1349, 4143, -1347, 4152, -1334, 4172, -1320, 4180, -1302, 4180, -1283, 4175, -1255, 4209, -1210, 4218, -1183, 4209, -1153, 4189, -1135, 4164, -1114, 4164, -1090, 4163, -1079, 4148, -1089, 4119, -1017, 4118, -968, 4118, -965, 4144, -952, 4166, -918, 4173, -892, 4162, -858, 4161, -844, 4135, -850, 4108, -869, 4095, -930, 4093, -1022, 4095, -1129, 4095, -1200, 4089, -1285, 4089)
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Infestation" index="97"]
+[node name="StaticBody2D6" type="StaticBody2D" parent="Infestation" index="96"]
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D6" index="0"]
+visible = false
 polygon = PackedVector2Array(-399, 4111, -412, 4125, -409, 4140, -401, 4158, -373, 4177, -356, 4180, -338, 4209, -287, 4235, -266, 4233, -278, 4258, -290, 4281, -288, 4292, -294, 4315, -290, 4349, -285, 4369, -283, 4409, -272, 4436, -256, 4443, -202, 4410, -199, 4356, -196, 4296, -204, 4189, -208, 4099, -261, 4088, -376, 4089)
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Infestation" index="98"]
+[node name="StaticBody2D7" type="StaticBody2D" parent="Infestation" index="97"]
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="0"]
+visible = false
 polygon = PackedVector2Array(5433, 3627, 5449, 3599, 5484, 3588, 5492, 3578, 5503, 3553, 5509, 3536, 5532, 3512, 5586, 3514, 5629, 3514, 5657, 3546, 5670, 3573, 5698, 3567, 5732, 3578, 5755, 3595, 5746, 3614, 5806, 3612, 5825, 3602, 5833, 3574, 5840, 3545, 5873, 3493, 5932, 3483, 5925, 3442, 5901, 3416, 5905, 3365, 5965, 3353, 6007, 3362, 6015, 3450, 6000, 3584, 5925, 3653, 5786, 3684, 5532, 3686)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="1"]
+visible = false
 polygon = PackedVector2Array(5937, 3184, 5948, 3195, 5938, 3211, 5927, 3231, 5907, 3251, 5910, 3272, 5934, 3294, 5957, 3304, 5995, 3288, 6002, 3261, 5989, 3224, 5975, 3208, 5965, 3191, 5978, 3165, 5964, 3136, 5944, 3128, 5935, 3168)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="2"]
+visible = false
 polygon = PackedVector2Array(6035, 2066, 6011, 2062, 5994, 2062, 5987, 2069, 5963, 2079, 5927, 2062, 5925, 2042, 5904, 2025, 5863, 2007, 5850, 1985, 5824, 1968, 5796, 1946, 5783, 1927, 5758, 1916, 5731, 1903, 5720, 1886, 5702, 1868, 5714, 1830, 5715, 1809, 5746, 1775, 5847, 1787, 5954, 1833, 6003, 1858, 6021, 1931, 6026, 1997)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="3"]
+visible = false
 polygon = PackedVector2Array(5608, 1821, 5611, 1837, 5586, 1859, 5567, 1855, 5532, 1843, 5513, 1843, 5498, 1862, 5480, 1871, 5456, 1867, 5444, 1851, 5443, 1827, 5534, 1824, 5570.48, 1822.52)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="4"]
+visible = false
 polygon = PackedVector2Array(5224, 1864, 5197, 1865, 5168, 1863, 5148, 1863, 5135, 1870, 5116, 1888, 5076, 1878, 5072, 1864, 5040, 1859, 4983, 1860, 4984, 1861, 4950, 1867, 4940, 1856, 4910, 1862, 4883, 1860, 4863, 1842, 4871, 1806, 4990, 1806, 5095, 1806, 5184, 1806, 5221, 1835)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="5"]
+visible = false
 polygon = PackedVector2Array(4847, 3457, 4867, 3466, 4892, 3472, 4922, 3499, 4935, 3563, 4937, 3613, 4906, 3641, 4826, 3629)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Infestation/StaticBody2D7" index="6"]
+visible = false
 polygon = PackedVector2Array(3727, 3405, 3758, 3407, 3774, 3407, 3782, 3417, 3797, 3434, 3801, 3463, 3791, 3477, 3777, 3485, 3786, 3503, 3800, 3523, 3821, 3517, 3839, 3545, 3852, 3577, 3872, 3583, 3891, 3607, 3889, 3644, 3849, 3663, 3796, 3669, 3730, 3665, 3707, 3567)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Infestation" index="99"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Infestation" index="98"]
 collision_layer = 4
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="0"]
+visible = false
 position = Vector2(-1356, 4609)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="1"]
+visible = false
 position = Vector2(-2036, 4399)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="2"]
+visible = false
 position = Vector2(-2074, 4457)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="3"]
+visible = false
 position = Vector2(-850, 4535)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="4"]
+visible = false
 position = Vector2(-588, 4748)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="5"]
+visible = false
 position = Vector2(-608, 4308)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="6"]
+visible = false
 position = Vector2(-248, 4692)
 shape = SubResource("CircleShape2D_gmsdm")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Infestation/StaticBody2D4" index="7"]
+visible = false
 position = Vector2(-253, 4764)
 shape = SubResource("CircleShape2D_gmsdm")
 
@@ -1217,6 +1234,21 @@ blend_mode = 1
 position = Vector2(1170.38, 3677.13)
 shape = SubResource("RectangleShape2D_n7uyr")
 
+[node name="Artefacts" type="Node2D" parent="." index="8"]
+
+[node name="Artefact" parent="Artefacts" index="0" instance=ExtResource("30_kuip7")]
+position = Vector2(-1740, -780)
+
+[node name="Artefact2" parent="Artefacts" index="1" instance=ExtResource("30_kuip7")]
+position = Vector2(5694, 3468)
+
+[node name="Artefact3" parent="Artefacts" index="2" instance=ExtResource("30_kuip7")]
+position = Vector2(-296, 5234)
+
+[node name="Enemies" parent="." index="9"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
 [node name="Drone" parent="Enemies" index="0" instance=ExtResource("30_rpc0u")]
 position = Vector2(2948, 3289)
 
@@ -1232,45 +1264,93 @@ position = Vector2(-988, 2529)
 [node name="Drone5" parent="Enemies" index="4" instance=ExtResource("30_rpc0u")]
 position = Vector2(-640, -558)
 
-[node name="Drone3" parent="Enemies" index="5" instance=ExtResource("30_rpc0u")]
+[node name="Drone7" parent="Enemies" index="5" instance=ExtResource("30_rpc0u")]
+position = Vector2(-1388, -14)
+
+[node name="Drone3" parent="Enemies" index="6" instance=ExtResource("30_rpc0u")]
 position = Vector2(5575, 2122)
 
-[node name="Scout" parent="Enemies" index="6" instance=ExtResource("31_svh24")]
+[node name="Scout" parent="Enemies" index="7" instance=ExtResource("31_svh24")]
 position = Vector2(168, -462)
 
-[node name="Scout3" parent="Enemies" index="7" instance=ExtResource("31_svh24")]
+[node name="Scout3" parent="Enemies" index="8" instance=ExtResource("31_svh24")]
 position = Vector2(-803, 1576)
 
-[node name="Scout4" parent="Enemies" index="8" instance=ExtResource("31_svh24")]
-position = Vector2(-1270, 4907)
+[node name="Scout5" parent="Enemies" index="9" instance=ExtResource("31_svh24")]
+position = Vector2(-1435, 472)
 
-[node name="Bug" parent="Enemies" index="9" instance=ExtResource("32_2gbsx")]
+[node name="Scout6" parent="Enemies" index="10" instance=ExtResource("31_svh24")]
+position = Vector2(-1435, 472)
+
+[node name="Scout7" parent="Enemies" index="11" instance=ExtResource("31_svh24")]
+position = Vector2(-451, 336)
+
+[node name="Scout4" parent="Enemies" index="12" instance=ExtResource("31_svh24")]
+position = Vector2(-1288, 4889)
+
+[node name="Scout9" parent="Enemies" index="13" instance=ExtResource("31_svh24")]
+position = Vector2(3878, 3077)
+
+[node name="Scout8" parent="Enemies" index="14" instance=ExtResource("31_svh24")]
+position = Vector2(-935, 4789)
+
+[node name="Bug" parent="Enemies" index="15" instance=ExtResource("32_2gbsx")]
 position = Vector2(171, -135)
 
-[node name="Bug7" parent="Enemies" index="10" instance=ExtResource("32_2gbsx")]
+[node name="Bug7" parent="Enemies" index="16" instance=ExtResource("32_2gbsx")]
 position = Vector2(-1664, 4348)
 
-[node name="Bug8" parent="Enemies" index="11" instance=ExtResource("32_2gbsx")]
+[node name="Bug8" parent="Enemies" index="17" instance=ExtResource("32_2gbsx")]
 position = Vector2(-632, 5132)
 
-[node name="Bug2" parent="Enemies" index="12" instance=ExtResource("32_2gbsx")]
-position = Vector2(4593, 2494)
+[node name="Bug13" parent="Enemies" index="18" instance=ExtResource("32_2gbsx")]
+position = Vector2(-1060, 5278)
 
-[node name="Bug3" parent="Enemies" index="13" instance=ExtResource("32_2gbsx")]
-position = Vector2(4095, 3250)
+[node name="Bug14" parent="Enemies" index="19" instance=ExtResource("32_2gbsx")]
+position = Vector2(-1635, 5079)
 
-[node name="Bug4" parent="Enemies" index="14" instance=ExtResource("32_2gbsx")]
+[node name="Bug15" parent="Enemies" index="20" instance=ExtResource("32_2gbsx")]
+position = Vector2(-894, 4358)
+
+[node name="Bug2" parent="Enemies" index="21" instance=ExtResource("32_2gbsx")]
+position = Vector2(4814, 2058)
+
+[node name="Bug16" parent="Enemies" index="22" instance=ExtResource("32_2gbsx")]
+position = Vector2(5507, 2990)
+
+[node name="Bug17" parent="Enemies" index="23" instance=ExtResource("32_2gbsx")]
+position = Vector2(5056, 2580)
+
+[node name="Bug18" parent="Enemies" index="24" instance=ExtResource("32_2gbsx")]
+position = Vector2(4235, 2552)
+
+[node name="Bug3" parent="Enemies" index="25" instance=ExtResource("32_2gbsx")]
+position = Vector2(4790, 3260)
+
+[node name="Bug4" parent="Enemies" index="26" instance=ExtResource("32_2gbsx")]
 position = Vector2(2610, 784)
 
-[node name="Bug5" parent="Enemies" index="15" instance=ExtResource("32_2gbsx")]
+[node name="Bug5" parent="Enemies" index="27" instance=ExtResource("32_2gbsx")]
 position = Vector2(1691, 774)
 
-[node name="Bug6" parent="Enemies" index="16" instance=ExtResource("32_2gbsx")]
+[node name="Bug9" parent="Enemies" index="28" instance=ExtResource("32_2gbsx")]
+position = Vector2(-1473, -554)
+
+[node name="Bug10" parent="Enemies" index="29" instance=ExtResource("32_2gbsx")]
+position = Vector2(-777, -58)
+
+[node name="Bug11" parent="Enemies" index="30" instance=ExtResource("32_2gbsx")]
+position = Vector2(-845, 718)
+
+[node name="Bug12" parent="Enemies" index="31" instance=ExtResource("32_2gbsx")]
+position = Vector2(-1841, 18)
+
+[node name="Bug6" parent="Enemies" index="32" instance=ExtResource("32_2gbsx")]
 visible = false
 position = Vector2(-1708, 4331)
 
-[node name="Player" parent="." index="9"]
-position = Vector2(1190, 3506)
+[node name="Player" parent="." index="10"]
+position = Vector2(1139, 3495)
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="10"]
@@ -1337,5 +1417,8 @@ rotation = -6.28318
 [node name="WallLamp5" parent="Lights" index="14" instance=ExtResource("7_4y1yt")]
 position = Vector2(-1164, -859)
 rotation = -9.42476
+
+[node name="BlockedDoor" parent="." index="13" instance=ExtResource("37_8vcdp")]
+position = Vector2(-2075, 1378)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

@@ -8,6 +8,8 @@ var explosion_radius: int = 250
 var vulnerable: bool = true
 var explosion_active: bool = false 
 
+signal open(pos, direction) 
+
 func _ready():
 	$Explosion.hide()
 	$Sprite2D.show()

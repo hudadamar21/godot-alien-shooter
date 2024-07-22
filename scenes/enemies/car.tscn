@@ -65,6 +65,7 @@ collision_layer = 2
 collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+visible = false
 polygon = PackedVector2Array(-162, -180, -42, -179, -26, -161, 63, -161, 89, -176, 192, -171, 235, -119, 249, -81, 247, 91, 219, 146, 191, 174, 65, 176, 54, 152, -24, 154, -44, 184, -168, 185, -181, 137, -173, 54, -245, 46, -243, -53, -179, -57, -180, -162)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

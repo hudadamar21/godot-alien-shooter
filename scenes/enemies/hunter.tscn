@@ -25,32 +25,32 @@ resource_name = "Front Right Leg"
 target_nodepath = NodePath("../Targets/FrontRight")
 flip_bend_direction = true
 joint_one_bone_idx = 1
-joint_one_bone2d_node = NodePath("Torso2/FrontRightLeg")
+joint_one_bone2d_node = NodePath("Torso/FrontRightLeg")
 joint_two_bone_idx = 2
-joint_two_bone2d_node = NodePath("Torso2/FrontRightLeg/FrontRightClaw")
+joint_two_bone2d_node = NodePath("Torso/FrontRightLeg/FrontRightClaw")
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_qpv7d"]
 resource_name = "Front Left Leg"
 target_nodepath = NodePath("../Targets/FrontLeft")
 joint_one_bone_idx = 3
-joint_one_bone2d_node = NodePath("Torso2/FrontLeftLeg")
+joint_one_bone2d_node = NodePath("Torso/FrontLeftLeg")
 joint_two_bone_idx = 4
-joint_two_bone2d_node = NodePath("Torso2/FrontLeftLeg/FontLeftClaw")
+joint_two_bone2d_node = NodePath("Torso/FrontLeftLeg/FontLeftClaw")
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_yhp7j"]
 target_nodepath = NodePath("../Targets/BackRight")
 joint_one_bone_idx = 6
-joint_one_bone2d_node = NodePath("Torso2/BackRightLeg")
+joint_one_bone2d_node = NodePath("Torso/BackRightLeg")
 joint_two_bone_idx = 7
-joint_two_bone2d_node = NodePath("Torso2/BackRightLeg/BackRightClaw")
+joint_two_bone2d_node = NodePath("Torso/BackRightLeg/BackRightClaw")
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_n1dfj"]
 target_nodepath = NodePath("../Targets/BackLeft")
 flip_bend_direction = true
 joint_one_bone_idx = 8
-joint_one_bone2d_node = NodePath("Torso2/BackLeftLeg")
+joint_one_bone2d_node = NodePath("Torso/BackLeftLeg")
 joint_two_bone_idx = 9
-joint_two_bone2d_node = NodePath("Torso2/BackLeftLeg/BackLeftClaw")
+joint_two_bone2d_node = NodePath("Torso/BackLeftLeg/BackLeftClaw")
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_vejo6"]
 enabled = true
@@ -232,16 +232,19 @@ script = ExtResource("1_dd5os")
 metadata/_edit_horizontal_guides_ = [-23.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -68)
 shape = SubResource("CapsuleShape2D_u6xfk")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-9, -192)
 shape = SubResource("CircleShape2D_15m2a")
 
 [node name="NoticeArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
 shape = SubResource("CircleShape2D_rpccx")
@@ -260,18 +263,19 @@ one_shot = true
 [node name="Targets" type="Node2D" parent="."]
 
 [node name="FrontRight" type="Marker2D" parent="Targets"]
-position = Vector2(65, -256)
+position = Vector2(96, -220)
 
 [node name="FrontLeft" type="Marker2D" parent="Targets"]
-position = Vector2(-58, -146)
+position = Vector2(-117, -227)
 
 [node name="BackRight" type="Marker2D" parent="Targets"]
-position = Vector2(9, 138)
+position = Vector2(77, 133)
 
 [node name="BackLeft" type="Marker2D" parent="Targets"]
-position = Vector2(-114, 112)
+position = Vector2(-100, 116)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+rotation = 0.0396825
 modification_stack = SubResource("SkeletonModificationStack2D_vejo6")
 
 [node name="Torso" type="Bone2D" parent="Skeleton2D"]
@@ -307,7 +311,7 @@ texture = ExtResource("4_2xfgm")
 
 [node name="FrontLeftLeg" type="Bone2D" parent="Skeleton2D/Torso"]
 position = Vector2(-27, -79)
-rotation = -1.09919
+rotation = -0.999553
 rest = Transform2D(0.764128, -0.644989, 0.644989, 0.764128, -27, -79)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/FrontLeftLeg"]
@@ -317,6 +321,8 @@ texture = ExtResource("3_c52pr")
 
 [node name="FontLeftClaw" type="Bone2D" parent="Skeleton2D/Torso/FrontLeftLeg"]
 position = Vector2(-44, -65)
+rotation = 1.7317
+scale = Vector2(1, 1)
 rest = Transform2D(0.289216, 0.957211, -0.957211, 0.289216, -44, -65)
 auto_calculate_length_and_angle = false
 length = 118.776
@@ -329,7 +335,7 @@ texture = ExtResource("4_2xfgm")
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/Torso"]
 position = Vector2(1, -99)
-rotation = -0.112909
+rotation = -0.187718
 scale = Vector2(0.999818, 0.999818)
 rest = Transform2D(0.998, -0.0603275, 0.0603275, 0.998, 1, -99)
 auto_calculate_length_and_angle = false
@@ -337,9 +343,9 @@ length = 118.631
 bone_angle = -90.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/Head"]
-position = Vector2(-0.999783, -55.8659)
+position = Vector2(-0.999227, -55.5219)
 rotation = -0.00161649
-scale = Vector2(1, 0.99827)
+scale = Vector2(1, 0.993831)
 texture = ExtResource("5_jv7go")
 
 [node name="RightClaw" type="Node2D" parent="Skeleton2D/Torso/Head"]
@@ -373,9 +379,6 @@ texture = ExtResource("6_biga4")
 [node name="BackRightClaw" type="Bone2D" parent="Skeleton2D/Torso/BackRightLeg"]
 position = Vector2(36, 70)
 rest = Transform2D(0.956479, 0.291671, -0.291671, 0.956479, 36, 70)
-auto_calculate_length_and_angle = false
-length = 121.941
-bone_angle = 67.933
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/BackRightLeg/BackRightClaw"]
 position = Vector2(34.1472, 45.3841)

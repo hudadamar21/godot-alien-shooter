@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq4tthnocidst"]
+[gd_scene load_steps=9 format=3 uid="uid://dq4tthnocidst"]
 
 [ext_resource type="Texture2D" uid="uid://b5f0x78w6iing" path="res://graphics/ui/bullet.png" id="1_j6t6t"]
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_s5ddb"]
 [ext_resource type="Texture2D" uid="uid://bqcp80glug2ce" path="res://graphics/ui/grenade.png" id="2_l2tsn"]
 [ext_resource type="Texture2D" uid="uid://lx0gjevn2n11" path="res://graphics/ui/progress_bar/bg.png" id="3_x7tp0"]
 [ext_resource type="Texture2D" uid="uid://dfdy7ficyhvix" path="res://graphics/ui/progress_bar/progress.png" id="4_jr16e"]
+[ext_resource type="Texture2D" uid="uid://dp28scs12llf0" path="res://graphics/items/artefact.png" id="6_iola7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ixl8i"]
 font_size = 24
@@ -88,3 +89,34 @@ layout_mode = 2
 value = 36.0
 texture_under = ExtResource("3_x7tp0")
 texture_progress = ExtResource("4_jr16e")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+theme_override_constants/margin_top = 125
+theme_override_constants/margin_right = 25
+
+[node name="Control" type="Control" parent="MarginContainer3"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = -10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_iola7")
+
+[node name="ArtefactFound" type="Label" parent="MarginContainer3/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 86
+text = "0/5"

@@ -12,6 +12,7 @@ var dodge_timer: bool = false
 
 signal shoot_laser(pos, player_direction)
 signal throw_grenade(pos, player_direction)
+signal open(pos, direction) 
 
 func _ready():
 	$Node2D/Explosion.visible = false
@@ -84,6 +85,8 @@ func _on_can_dodge_timer_timeout():
 func hit():
 	Globals.health -= 10
 	$AudioStreamPlayer2D.play()
+	if Globals.health <= 0:
+		queue_free()
 	
 func hit_explosion():
 	Globals.health -= 20
